@@ -29,7 +29,7 @@ module.exports = () => {
         crossorigin: 'use-credentials',
         icons: [
           {
-            src: path.resolve('src/images/icon_92x92.png'),
+            src: path.resolve('src/images/icons/icon_92x92.png'),
             sizes: [92, 128, 256, 512],
             destination: path.join('images', 'icons'),
           },
