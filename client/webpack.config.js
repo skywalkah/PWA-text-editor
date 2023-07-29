@@ -19,24 +19,24 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: './index.html',
       }),
       new WebpackPwaManifest({
         name: 'JATE',
         short_name: 'JATE',
         description: 'Just Another Text Editor',
         background_color: '#ffffff',
-        crossorigin: 'use-credentials', // can be null, use-credentials or anonymous
+        crossorigin: 'use-credentials',
         icons: [
           {
-            src: path.resolve('src/assets/icons/icon_96x96.png'),
-            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
-            destination: path.join('assets', 'icons'),
+            src: path.resolve('src/images/icon_92x92.png'),
+            sizes: [92, 128, 256, 512],
+            destination: path.join('images', 'icons'),
           },
         ],
       }),
       new InjectManifest({
-        swSrc: './src/src-sw.js',
+        swSrc: './src-sw.js',
         swDest: 'service-worker.js',
       }),
     ],
