@@ -20,13 +20,17 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
+        title: 'JATE',
       }),
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: 'JATE',
         short_name: 'JATE',
         description: 'Just Another Text Editor',
         background_color: '#ffffff',
-        crossorigin: 'use-credentials',
+        start_url: './',
+        publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
@@ -44,18 +48,23 @@ module.exports = () => {
     module: {
       rules: [
         {
+          test: /\.html$/,
+          use: ['html-loader']
+        },
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'],
+        },
+        {
           test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
+          exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             },
           },
-        },
-        {
-          test: /\.css$/,
-          use: ['style-loader', 'css-loader'],
         },
       ],
     },

@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.2.0",
     "nodemon": "^2.0.4"
   }
 }
