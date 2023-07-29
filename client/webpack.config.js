@@ -30,7 +30,7 @@ module.exports = () => {
         description: 'Just Another Text Editor',
         background_color: '#272822',
         display: 'standalone',
-        theme_color: '#3367D6',
+        theme_color: '#181915',
         start_url: './',
         publicPath: './',
         icons: [
